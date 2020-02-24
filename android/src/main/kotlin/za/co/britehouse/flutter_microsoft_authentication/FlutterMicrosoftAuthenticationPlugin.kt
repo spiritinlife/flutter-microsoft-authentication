@@ -185,6 +185,7 @@ class FlutterMicrosoftAuthenticationPlugin: MethodCallHandler {
         if (exception is MsalClientException) {
           /* Exception inside MSAL, more info inside MsalError.java */
           Log.d(TAG, "Authentication failed: MsalClientException")
+          Log.d(TAG, exception)
           result.error("MsalClientException",exception.errorCode, null)
 
         } else if (exception is MsalServiceException) {
